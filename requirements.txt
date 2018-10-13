@@ -14,4 +14,4 @@ PyMySQL==0.9.2
 six==1.11.0
 Werkzeug==0.14.1
 gunicorn==19.9.0
-mod_wsgi==4.6.4
+#mod_wsgi==4.6.4
