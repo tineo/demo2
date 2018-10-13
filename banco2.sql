@@ -162,7 +162,7 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `transaccion_deposito`(in remitente int, in receptor int, monto double, in nombreT varchar(15), in tipo int)
+CREATE PROCEDURE `transaccion_deposito`(in remitente int, in receptor int, monto double, in nombreT varchar(15), in tipo int)
 BEGIN
 	
     insert into transaccion(monto, fecha, nombreTransaccion,tipo,cuenta_remitente, cuenta_receptor)
@@ -193,7 +193,6 @@ DELIMITER ;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `transacciones` AS select `c`.`numeroCuenta` AS `numeroCuenta`,`t`.`fecha` AS `fecha`,`t`.`nombreTransaccion` AS `nombreTransaccion`,`t`.`monto` AS `monto` from (`transaccion` `t` join `cuenta` `c` on((`c`.`idcuenta` = `t`.`cuenta_receptor`))) group by `t`.`fecha` desc */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
