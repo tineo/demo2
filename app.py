@@ -8,10 +8,10 @@ mysql = MySQL()
 
 ###mysql://:@/?reconnect=true
 # MySQL configurations
-app.config['MYSQL_DATABASE_USER'] = 'ba095cd9245924'
-app.config['MYSQL_DATABASE_PASSWORD'] = '08e8cedf'
-app.config['MYSQL_DATABASE_DB'] = 'heroku_4db300b9cb8d626'
-app.config['MYSQL_DATABASE_HOST'] = 'us-cdbr-iron-east-01.cleardb.net'
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'megamisama'
+app.config['MYSQL_DATABASE_DB'] = 'banco2'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 #if os.environ.has_key('DATABASE_URL'):
 
 
