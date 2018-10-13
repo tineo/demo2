@@ -9,7 +9,7 @@ mysql = MySQL()
 app.config['MYSQL_DATABASE_USER'] = 'ecwx42qkndtruvd0'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'qbn4a4atuss0ibby'
 app.config['MYSQL_DATABASE_DB'] = 'inqmmub8vyrma234'
-app.config['MYSQL_DATABASE_HOST'] = 'alv4v3hlsipxnujn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	'
+app.config['MYSQL_DATABASE_HOST'] = 'alv4v3hlsipxnujn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'
 #if os.environ.has_key('DATABASE_URL'):
 
 app.config['MYSQL_DATABASE_URI'] = os.environ['DATABASE_URL']
