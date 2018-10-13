@@ -5,14 +5,18 @@ import os
 app = Flask(__name__)
 mysql = MySQL()
 
+
+###mysql://:@/?reconnect=true
 # MySQL configurations
-app.config['MYSQL_DATABASE_USER'] = 'ecwx42qkndtruvd0'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'qbn4a4atuss0ibby'
-app.config['MYSQL_DATABASE_DB'] = 'inqmmub8vyrma234'
-app.config['MYSQL_DATABASE_HOST'] = 'alv4v3hlsipxnujn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_DATABASE_USER'] = 'ba095cd9245924'
+app.config['MYSQL_DATABASE_PASSWORD'] = '08e8cedf'
+app.config['MYSQL_DATABASE_DB'] = 'heroku_4db300b9cb8d626'
+app.config['MYSQL_DATABASE_HOST'] = 'us-cdbr-iron-east-01.cleardb.net'
 #if os.environ.has_key('DATABASE_URL'):
 
-app.config['MYSQL_DATABASE_URI'] = os.environ['DATABASE_URL']
+
+
+#app.config['MYSQL_DATABASE_URI'] = os.environ['DATABASE_URL']
 
 mysql.init_app(app)
 
