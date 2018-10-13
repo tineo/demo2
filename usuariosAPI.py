@@ -13,20 +13,18 @@ app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
 mysql.init_app(app)
 
-@app.route('/depo', methods=['GET'])
+@app.route('/', methods=['GET'])
 def get():
-    remitente=request.args.get('remitente')
-    receptor=request.args.get('receptor')
-    monto=request.args.get('monto')
-    nombreT=request.args.get('nombreT')
-    tipo= request.args.get('tipo')
-    print(remitente)
+    Cremitente=request.args.get('remitente')
+    print(Cremitente)
+    sql_select='''select u.nombre, u.apellido, b.nombrebanco from banco2.cuenta c
+    inner join usuario u on u.idusuario=c.idusuario
+    inner join banco b on b.idbancos=c.idbancos
+     where idcuenta= %s'''
     conn =mysql.connect()
     cur = conn.cursor()
-
-    cur.callproc('transaccion_deposito', (remitente,receptor,monto,nombreT,tipo))
-    cur.fetchall()
-
+    cur.execute(sql_select,(Cremitente,))
+    print(cur.fetchall())
     conn.commit()
 
     return jsonify({'resultado' :'exito' })
