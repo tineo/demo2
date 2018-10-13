@@ -10,8 +10,10 @@ app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'digimon'
 app.config['MYSQL_DATABASE_DB'] = 'banco2'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-if os.environ.has_key('DATABASE_URL'):
-    app.config['MYSQL_DATABASE_URI'] = os.environ['DATABASE_URL']
+#if os.environ.has_key('DATABASE_URL'):
+
+app.config['MYSQL_DATABASE_URI'] = os.environ['DATABASE_URL']
+
 mysql.init_app(app)
 
 @app.route('/depo', methods=['GET'])
